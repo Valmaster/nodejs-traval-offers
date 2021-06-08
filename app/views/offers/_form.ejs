@@ -1,0 +1,45 @@
+<form class="card-body" method="post" action="<%= action %>">
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Titre de l'annonce">
+        <label for="name">Titre de l'annonce</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <textarea class="form-control" id="description" name="description" placeholder="Description de l'annonce"></textarea>
+        <label for="name">Description de l'annonce</label>
+    </div>
+
+    <div class="row">
+
+        <div class="col">
+
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="dateBegin" name="dateBegin" placeholder="Date de début de l'offre">
+                <label for="dateBegin">Date de début de l'offre</label>
+            </div>
+
+        </div>
+
+        <div class="col">
+
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="dateEnd" name="dateEnd" placeholder="Date de début de l'offre">
+                <label for="dateBegin">Date de fin de l'offre</label>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="imgUrl" name="imgUrl" placeholder="Lien de l'image">
+        <label for="imgUrl">Lien de l'image</label>
+    </div>
+
+    <div class="row col-6 mx-auto">
+        <button type="submit" class="btn btn-dark btn-lg btn-block"><%= submitLabel %></button>
+        <a href="/offers" class="btn btn-outline-dark my-2">RETOUR</a>
+    </div>
+
+</form>

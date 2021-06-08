@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><%- include('../partials/head', {title: 'Travel Offers'}); %></head>
+<body>
+<div class="container">
+
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold">TRAVEL OFFERS</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Travel offers est la seule agence de voyage vous accompagnant dans vos démarches
+                d'évasion durant la pandémie COVID.</p>
+        </div>
+    </div>
+
+    <div class="row-">
+
+        <div class="col-10 mx-auto">
+
+            <div class="d-flex justify-content-between mb-3">
+                <h2>NOS OFFRES</h2>
+                <a href="/offers/new" class="btn btn-success btn-lg">NOUVEL OFFRE</a>
+            </div>
+
+            <% if(offers.length > 0) {
+                    for(const offer of offers) { %>
+
+                <div class="card mb-3 h-100">
+                    <div class="row g-0">
+                        <div class="col-md-4 mx-auto">
+                            <img src="<%= offer.imgUrl %>" style="width: 250px">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= offer.name %></h5>
+                                <p class="card-text"><%= offer.description %></p>
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                        Offre disponible du <%= offer.dateBegin.toLocaleDateString('fr-FR') %>
+                                        au <%= offer.dateEnd.toLocaleDateString('fr-FR') %>
+                                    </small>
+                                </p>
+                            </div>
+                            <div class="card-footer text-muted border-0 bg-white text-end">
+                                Fait le <%= offer.createdAt.toLocaleDateString('fr-FR') %>
+                                par <%= offer.creatorId.username %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }
+            } else { %>
+                <h3 class="text-center my-5">Il n'y a pas encore d'offres !</h3>
+            <% } %>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
